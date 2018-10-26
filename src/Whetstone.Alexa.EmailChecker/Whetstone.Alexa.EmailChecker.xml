@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+Sample license text.
+-->
+<doc>
+    <assembly>
+        <name>Whetstone.Alexa.EmailChecker</name>
+    </assembly>
+    <members>
+        <member name="P:Whetstone.Alexa.EmailChecker.RequestRecordMessage.SessionId">
+            <summary>
+            This is the session id related to the connecting service.
+            </summary>
+            <remarks>If this connecting app is Alexa, then this is the Alexa session id.</remarks>
+        </member>
+        <member name="P:Whetstone.Alexa.EmailChecker.RequestRecordMessage.UserId">
+            <summary>
+            The user id provided by the connecting service. It is possible the user id is missing if request is a CanFulfill request.
+            </summary>
+            <remarks>If the connected service is Alexa, then this is the Alexa user id.</remarks>
+        </member>
+    </members>
+</doc>
