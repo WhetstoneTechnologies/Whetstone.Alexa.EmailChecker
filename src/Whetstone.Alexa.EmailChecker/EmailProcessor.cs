@@ -234,18 +234,18 @@ namespace Whetstone.Alexa.EmailChecker
 
             if (ret.PermissionGranted)
             {
-                try
-                {
+                //try
+                //{
 
-                    await _progMan.SendProgressiveResponseAsync(req,
-                        "I'm working on it");
-                }
-                catch(Exception ex)
-                {
-                    // Log the error, don't fail the call
-                    _logger.LogError(ex, "Error sending progressive response");
+                //    await _progMan.SendProgressiveResponseAsync(req,
+                //        "I'm working on it");
+                //}
+                //catch(Exception ex)
+                //{
+                //    // Log the error, don't fail the call
+                //    _logger.LogError(ex, "Error sending progressive response");
 
-                }
+                //}
 
                 resp.Response.OutputSpeech.Type = OutputSpeechType.Ssml;
 
@@ -371,6 +371,8 @@ namespace Whetstone.Alexa.EmailChecker
             {
                 emailAddress = await _userDataManager.GetAlexaUserEmailAsync(req.Context.System.ApiEndpoint, req.Context.System.ApiAccessToken);
                 isPermissionGranted = true;
+
+                _logger?.LogInformation("User email retrieved");
             }
             catch (AlexaSecurityException secEx)
             {

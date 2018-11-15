@@ -98,7 +98,7 @@ namespace Whetstone.Alexa.EmailChecker.Configuration
                 logging.ClearProviders();
                 logging.AddConsole(x=>
                 {
-                    x.IncludeScopes = true;
+                    x.IncludeScopes = false;
                 });
 
 #if DEBUG

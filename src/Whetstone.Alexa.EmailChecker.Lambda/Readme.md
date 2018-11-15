@@ -47,3 +47,9 @@ Deploy function to AWS Lambda
     cd "Whetstone.Alexa.Lambda.EmailChecker/src/Whetstone.Alexa.Lambda.EmailChecker"
     dotnet lambda deploy-function
 ```
+
+To get the JSON skill representation use:
+
+ask api get-skill –s {skillId} > skill.json
+
+ask clone [<-s|--skill-id <skill Id>]

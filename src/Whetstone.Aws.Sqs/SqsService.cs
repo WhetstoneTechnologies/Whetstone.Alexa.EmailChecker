@@ -65,7 +65,6 @@ namespace Whetstone.Aws.Sqs
         private async Task<string> GetQueueUrlAsync()
         {
 
-            string queueUrl = null;
 
             if (string.IsNullOrWhiteSpace(_queueConfig.QueueUrl))
             {
@@ -80,7 +79,7 @@ namespace Whetstone.Aws.Sqs
                             GetQueueUrlResponse queueNameResp = await sqsClient.GetQueueUrlAsync(_queueConfig.QueueName);
                             _queueConfig.QueueUrl = queueNameResp.QueueUrl;
 
-                            _logger.LogInformation($"Queue name {_queueConfig.QueueName} resolved to queue url {queueUrl}");
+                            _logger.LogInformation($"Queue name {_queueConfig.QueueName} resolved to queue url {_queueConfig.QueueUrl}");
                         }
                     }
                     catch (QueueDoesNotExistException ex)
